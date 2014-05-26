@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
 <header class="navbar navbar-fixed-top navbar-inverse">
  <div class="navbar-inner">
  <div class="container">
@@ -21,12 +21,11 @@
 </div>
 </div>
 </header>
+<body>
 
 <div class="container">
+
 <%= yield %>
-</div>
-
-
 
 <footer class="footer">
 <small>
@@ -39,6 +38,12 @@
 </ul>
 </nav>
 </footer>
+
+</div>
+
+
+<%= debug(params) if Rails.env.development? %>
+
 
 </body>
 </html>
