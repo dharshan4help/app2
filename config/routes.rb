@@ -1,6 +1,7 @@
 App2::Application.routes.draw do
 
 resources :users
+resources :sessions, only: [:new, :create, :destroy]
 
 #get "users/new"
 
@@ -19,6 +20,11 @@ match '/contact', to: 'static_pages#contact', via: 'get'
 match '/signup', to: 'users#new', via: 'get'
 
 match '/home', to: 'static_pages#home', via: 'get'
+
+match '/signin', to: 'sessions#new', via: 'get'
+
+match '/signout', to: 'sessions#destroy', via: 'delete'
+
 #match '/', to: 'static_pages#home', via: 'get'
 
 
